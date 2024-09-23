@@ -2,9 +2,9 @@
 
 namespace Elcomware\ReportMaster\Tests;
 
+use Elcomware\ReportMaster\ReportMasterServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Elcomware\ReportMaster\ReportMasterServiceProvider;
 
 class TestCase extends Orchestra
 {

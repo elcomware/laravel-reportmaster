@@ -2,9 +2,9 @@
 
 namespace Elcomware\ReportMaster;
 
+use Elcomware\ReportMaster\Commands\ReportMasterCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Elcomware\ReportMaster\Commands\ReportMasterCommand;
 
 class ReportMasterServiceProvider extends PackageServiceProvider
 {
