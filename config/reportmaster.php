@@ -11,7 +11,7 @@ return [
     // Available report formats
     'formats' => [
         'pdf',
-        'xlsx',
+        'excel',
         'csv',
     ],
     'storage_path' => storage_path('app/reports'), // Path to store generated reports
