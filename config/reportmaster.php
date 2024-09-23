@@ -3,9 +3,9 @@
 // config for Elcomware/ReportMaster
 return [
 
-    'default'=>[
+    'default' => [
         'template' => 'default',
-        'format'=>'pdf' // Default format for reports (pdf, xlsx, csv)
+        'format' => 'pdf', // Default format for reports (pdf, xlsx, csv)
     ],
 
     // Available report formats
