@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Elcomware\ReportMaster\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class ReportMasterCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-reportmaster';
 
     public $description = 'My command';
 

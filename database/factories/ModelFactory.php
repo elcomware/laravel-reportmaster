@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\Skeleton\Database\Factories;
+namespace Elcomware\ReportMaster\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
