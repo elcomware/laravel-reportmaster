@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use YourNamespace\ReportMaster\Facades\ReportMaster;
 
 uses(RefreshDatabase::class);
 
