@@ -3,6 +3,7 @@
 namespace Elcomware\ReportMaster;
 
 use Elcomware\ReportMaster\Commands\ReportMasterCommand;
+use Elcomware\ReportMaster\Components\Button;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -18,6 +19,7 @@ class ReportMasterServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-reportmaster')
             ->hasConfigFile()
+            ->hasViewComponents('report',Button::class)
             ->hasViews()
             ->hasRoute('reportmaster')
             ->hasMigration('create_reportmaster_table')

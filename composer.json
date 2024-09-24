@@ -67,6 +67,7 @@
         "test": "vendor/bin/pest",
         "test-coverage": "vendor/bin/pest --coverage",
         "format": "vendor/bin/pint",
+        "canvas": "@php vendor/bin/canvas --ansi",
         "serve": [
             "Composer\\Config::disableProcessTimeout",
             "@build",

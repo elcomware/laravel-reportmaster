@@ -11,9 +11,14 @@ class ReportController extends Controller implements ReportContract
 {
     public function generate(Request $request): \Illuminate\Http\JsonResponse
     {
-        $title = $request->input('title');
-        $data = $request->input('data');
-        $template = $request->input('template', config('reportmaster.default_template'));
+        /*$title = $request->input('title');
+        $data = $request->input('data');*/
+        $title = 'Report Title'; //$request->input('title');
+        $data = [
+            ['name' => 'John Doe', 'email' => 'john@example.com'],
+            ['name' => 'Jane Doe', 'email' => 'jane@example.com'],
+        ];;//$request->input('data');
+        $template = $request->input('template', config('reportmaster.defaults.template'));
 
         $report = ReportMaster::create($title)
             ->setData($data)
@@ -23,11 +28,16 @@ class ReportController extends Controller implements ReportContract
         return response()->json(['report' => $report]);
     }
 
-    public function download(Request $request, $format)
+    public function   download(Request $request, $format)
     {
-        $title = $request->input('title');
-        $data = $request->input('data');
-        $template = $request->input('template', config('reportmaster.default_template'));
+       /* $title = $request->input('title');
+        $data = $request->input('data');*/
+        $title = 'Report Title'; //$request->input('title');
+        $data = [
+            ['name' => 'John Doe', 'email' => 'john@example.com'],
+            ['name' => 'Jane Doe', 'email' => 'jane@example.com'],
+        ];;//$request->input('data');
+        $template = $request->input('template', config('reportmaster.defaults.template'));
 
         $report = ReportMaster::create($title)
             ->setData($data)
@@ -43,9 +53,13 @@ class ReportController extends Controller implements ReportContract
 
     public function view(Request $request): \Illuminate\Foundation\Application|\Illuminate\Http\Response|\Illuminate\Contracts\Routing\ResponseFactory
     {
-        $title = $request->input('title');
-        $data = $request->input('data');
-        $template = $request->input('template', config('reportmaster.default_template'));
+
+        $title = 'Report Title'; //$request->input('title');
+        $data = [
+            ['name' => 'John Doe', 'email' => 'john@example.com'],
+            ['name' => 'Jane Doe', 'email' => 'jane@example.com'],
+        ];;//$request->input('data');
+        $template = $request->input('template', config('reportmaster.defaults.template'));
 
         $report = ReportMaster::create($title)
             ->setData($data)
@@ -54,4 +68,6 @@ class ReportController extends Controller implements ReportContract
 
         return response($report);
     }
+
+
 }

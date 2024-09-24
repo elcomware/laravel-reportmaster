@@ -35,6 +35,7 @@ class ReportMaster {
         return view("reportmaster::templates.{$this->template}", ['title' => $this->title, 'data' => $this->data])->render();
     }
 
+
     public function download($filename): \Illuminate\Http\Response
     {
         $pdf = PDF::loadHTML($this->generate());

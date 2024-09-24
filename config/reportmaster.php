@@ -3,11 +3,14 @@
 // config for Elcomware/ReportMaster
 return [
 
-    'default' => [
+    'defaults' => [
         'template' => 'default',
         'format' => 'pdf', // Default format for reports (pdf, xlsx, csv)
     ],
-
+    'templates'=>[
+        'invoice'=>'invoice',
+        'report'=>'reports.student'
+    ],
     // Available report formats
     'formats' => [
         'pdf',

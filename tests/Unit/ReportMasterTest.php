@@ -7,15 +7,14 @@ it('can generate a report', function () {
         ['name' => 'John Doe', 'email' => 'john@example.com'],
         ['name' => 'Jane Doe', 'email' => 'jane@example.com'],
     ];
-
     $report = ReportMaster::create('User Report')
         ->setData($data)
         ->setTemplate('default')
         ->generate();
 
-    expect($report)->toContain('<h1>User Report</h1>');
-    expect($report)->toContain('<td>John Doe</td>');
-    expect($report)->toContain('<td>jane@example.com</td>');
+    expect($report)->toContain('<h1>User Report</h1>')
+    ->and($report)->toContain('<td>John Doe</td>')
+    ->and($report)->toContain('<td>jane@example.com</td>');
 });
 
 it('can export a report as pdf', function () {

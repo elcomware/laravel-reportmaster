@@ -1,0 +1,28 @@
+preset: package
+
+namespace: Elcomware\ReportMaster
+user-auth-model: App\Models\User
+
+
+paths:
+  src: src
+  resource: resources
+
+factory:
+  path: database/factories
+
+migration:
+  path: database/migrations
+  prefix: ''
+
+console:
+  namespace: Elcomware\ReportMaster\Console
+
+model:
+  namespace: Elcomware\ReportMaster\Models
+
+provider:
+  namespace: Elcomware\ReportMaster\Providers
+
+testing:
+  namespace: Elcomware\ReportMaster\Tests

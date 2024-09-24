@@ -4,10 +4,14 @@ namespace Elcomware\ReportMaster\Tests;
 
 use Elcomware\ReportMaster\ReportMasterServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Foundation\Testing\Concerns\InteractsWithViews;
+use Orchestra\Testbench\Concerns\WithWorkbench;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
+    use WithWorkbench;
+    use InteractsWithViews;
     protected function setUp(): void
     {
         parent::setUp();
@@ -33,4 +37,13 @@ class TestCase extends Orchestra
         $migration->up();
         */
     }
+
+   protected function getPackageAliases($app)
+   {
+       return [
+           'ReportMaster' => 'Elcomware\ReportMaster\Facades',
+       ];
+   }
+
+
 }
