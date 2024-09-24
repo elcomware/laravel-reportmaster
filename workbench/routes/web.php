@@ -6,9 +6,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/reports', function () {
     return view('reports-viewer');
 });
-
-

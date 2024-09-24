@@ -7,9 +7,9 @@ return [
         'template' => 'default',
         'format' => 'pdf', // Default format for reports (pdf, xlsx, csv)
     ],
-    'templates'=>[
-        'invoice'=>'invoice',
-        'report'=>'reports.student'
+    'templates' => [
+        'invoice' => 'invoice',
+        'report' => 'reports.student',
     ],
     // Available report formats
     'formats' => [
