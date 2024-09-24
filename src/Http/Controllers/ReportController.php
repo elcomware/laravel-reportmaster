@@ -3,8 +3,8 @@
 namespace Elcomware\ReportMaster\Http\Controllers;
 
 use Elcomware\ReportMaster\Contracts\ReportContract;
-use Illuminate\Http\Request;
 use Elcomware\ReportMaster\Facades\ReportMaster;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
 class ReportController extends Controller implements ReportContract

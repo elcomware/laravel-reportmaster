@@ -14,7 +14,6 @@ class ReportExport implements FromCollection, WithHeadings
         $this->data = $data;
     }
 
-
     public function collection(): \Illuminate\Support\Collection
     {
         return collect($this->data);
@@ -25,6 +24,7 @@ class ReportExport implements FromCollection, WithHeadings
         if (count($this->data) > 0) {
             return array_keys($this->data[0]);
         }
+
         return [];
     }
 }
