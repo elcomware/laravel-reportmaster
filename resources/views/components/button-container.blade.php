@@ -1,9 +1,7 @@
 @props([
-    'btnSize'=>25,
-    'groupBorder',
-    'buttons',
-    'iconClass'
-])
+    'groupBorder'=>30,
+    'hasShadow'=>true
+    ])
 
 <style>
     .btn-group-container {
@@ -18,8 +16,11 @@
         /*border-radius: 50px;*/
         background: #fefefe;
         border: 0.5px solid rgba(146, 152, 176, 0.4);
-        box-shadow: 0 0 10px rgba(146, 152, 176, 0.2), 4px 4px 10px rgba(146, 152, 176, 0.2);
+
         cursor: default;
+    }
+    .shadow{
+        box-shadow: 0 0 10px rgba(146, 152, 176, 0.2), 4px 4px 10px rgba(146, 152, 176, 0.2);
     }
     .btn-group .btn {
         border: 0 solid transparent;
@@ -103,30 +104,18 @@
         }
     }
 
-    .btn-icon {
-        margin-right: 6px;
-        /*font-size:30px;*/
-        vertical-align: middle;
-    }
 
 </style>
 
 <div class="btn-group-container">
-    <div class="btn-group" style="border-radius: {{$groupBorder}}px" >
-       @foreach($buttons as $btn)
-            <button class="btn" type="button" onclick="location.href='{{$btn['path']}}';" value="{{$btn['label']}}">
-                @isset($iconClass)
-                    <i class="{{$iconClass}}"></i>
-                @else
-                    <span class="btn-icon" style="font-size: {{$btnSize}}px " >{!! $btn['icon'] !!}</span>
-                @endisset
-                <div class="animate-normal "> {{ucfirst($btn['label'])}}</div>
-            </button>
-        @endforeach
-
+    <div
+        @class([
+        'btn-group',
+        'shadow'=> $hasShadow
+        ])  style="border-radius: {{$groupBorder}}px" >
+        {{$slot}}
     </div>
 </div>
-
 
 @pushOnce('scripts')
     <script>

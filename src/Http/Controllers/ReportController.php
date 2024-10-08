@@ -2,6 +2,7 @@
 
 namespace Elcomware\ReportMaster\Http\Controllers;
 
+use Barryvdh\DomPDF\Facade\Pdf;
 use Elcomware\ReportMaster\Contracts\ReportContract;
 use Elcomware\ReportMaster\Facades\ReportMaster;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class ReportController extends Controller implements ReportContract
             ['name' => 'John Doe', 'email' => 'john@example.com'],
             ['name' => 'Jane Doe', 'email' => 'jane@example.com'],
         ];;//$request->input('data');
-        $template = $request->input('template', config('reportmaster.defaults.template'));
+        $template = $request->input('template', config('reportmaster.templates.student.grade'));
 
         $report = ReportMaster::create($title)
             ->setData($data)
@@ -51,7 +52,7 @@ class ReportController extends Controller implements ReportContract
         };
     }
 
-    public function view(Request $request): \Illuminate\Foundation\Application|\Illuminate\Http\Response|\Illuminate\Contracts\Routing\ResponseFactory
+    public function print(Request $request): \Illuminate\Http\Response
     {
 
         $title = 'Report Title'; //$request->input('title');
@@ -59,14 +60,17 @@ class ReportController extends Controller implements ReportContract
             ['name' => 'John Doe', 'email' => 'john@example.com'],
             ['name' => 'Jane Doe', 'email' => 'jane@example.com'],
         ];;//$request->input('data');
-        $template = $request->input('template', config('reportmaster.defaults.template'));
+        $template = $request->input('template', config('reportmaster.templates.student-grade'));
+
 
         $report = ReportMaster::create($title)
             ->setData($data)
             ->setTemplate($template)
-            ->view();
+            ->print();
+        return $report;
 
-        return response($report);
+        //$pdf = PDF::loadHTML($report);
+        //return $pdf->stream('report.pdf');
     }
 
 

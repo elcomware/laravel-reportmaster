@@ -19,7 +19,11 @@ class ReportMasterServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-reportmaster')
             ->hasConfigFile()
-            ->hasViewComponents('report',Button::class)
+            ->hasViewComponents('report',
+                Button::class,
+                Components\ButtonContainer::class,
+                Components\ButtonItem::class
+            )
             ->hasViews()
             ->hasRoute('reportmaster')
             ->hasMigration('create_reportmaster_table')

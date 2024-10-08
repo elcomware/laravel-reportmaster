@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:x-report="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -11,6 +11,11 @@
 
 <h1>this is reports</h1>
 
-<x-report-button />
+{{--<x-report-button groupBorder="30" :$buttons />--}}
+<x-report-button-container groupBorder="1" hasShadow>
+   <x-report-button-item label="print" printer  path="{{route('report.print')}}" size="30"/>
+   <x-report-button-item label="download" downloader path="{{route('report.download',['format'=>'pdf'])}}"/>
+   <x-report-button-item label="export" exporter path="{{route('report.download',['format'=>'excel'])}}"/>
+</x-report-button-container>
 </body>
 </html>

@@ -10,5 +10,5 @@ interface ReportContract
 
     public function download(Request $request, $format);
 
-    public function view(Request $request): \Illuminate\Foundation\Application|\Illuminate\Http\Response|\Illuminate\Contracts\Routing\ResponseFactory;
+    public function print(Request $request): \Illuminate\Foundation\Application|\Illuminate\Http\Response|\Illuminate\Contracts\Routing\ResponseFactory;
 }

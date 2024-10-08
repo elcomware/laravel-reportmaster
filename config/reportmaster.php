@@ -9,7 +9,7 @@ return [
     ],
     'templates'=>[
         'invoice'=>'invoice',
-        'report'=>'reports.student'
+        'student-grade'=>'student.grades'
     ],
     // Available report formats
     'formats' => [

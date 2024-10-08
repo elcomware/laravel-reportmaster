@@ -3,6 +3,7 @@
 namespace Elcomware\ReportMaster;
 
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Http\Response;
 use Maatwebsite\Excel\Facades\Excel;
 
 class ReportMaster
@@ -36,14 +37,19 @@ class ReportMaster
 
     public function generate(): string
     {
-        return view("reportmaster::templates.{$this->template}", ['title' => $this->title, 'data' => $this->data])->render();
+        return view(
+            "reportmaster::templates.{$this->template}",
+            [
+                'title' => $this->title,
+                'data' => $this->data
+            ]
+        )->render();
     }
 
 
     public function download($filename): \Illuminate\Http\Response
     {
         $pdf = PDF::loadHTML($this->generate());
-
         return $pdf->download($filename);
     }
 
@@ -52,9 +58,10 @@ class ReportMaster
         return $this->generate();
     }
 
-    public function print(): string
+    public function print(): Response
     {
-        return $this->generate();
+        $pdf = PDF::loadHTML($this->generate());
+        return $pdf->stream();
     }
 
     /**
