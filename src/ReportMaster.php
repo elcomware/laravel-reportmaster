@@ -46,7 +46,6 @@ class ReportMaster
         )->render();
     }
 
-
     public function download($filename): \Illuminate\Http\Response
     {
         $pdf = PDF::loadHTML($this->generate());

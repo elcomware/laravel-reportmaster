@@ -13,8 +13,8 @@ it('can generate a report', function () {
         ->generate();
 
     expect($report)->toContain('<h1>User Report</h1>')
-    ->and($report)->toContain('<td>John Doe</td>')
-    ->and($report)->toContain('<td>jane@example.com</td>');
+        ->and($report)->toContain('<td>John Doe</td>')
+        ->and($report)->toContain('<td>jane@example.com</td>');
 });
 
 it('can export a report as pdf', function () {
