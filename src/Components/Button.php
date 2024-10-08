@@ -8,10 +8,8 @@ use Illuminate\View\Component;
 
 class Button extends Component
 {
-
     //public string $label;
-   // public string $icon;
-
+    // public string $icon;
 
     /**
      * Create a new component instance.

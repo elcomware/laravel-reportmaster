@@ -41,7 +41,7 @@ class ReportMaster
             "reportmaster::templates.{$this->template}",
             [
                 'title' => $this->title,
-                'data' => $this->data
+                'data' => $this->data,
             ]
         )->render();
     }
@@ -49,6 +49,7 @@ class ReportMaster
     public function download($filename): \Illuminate\Http\Response
     {
         $pdf = PDF::loadHTML($this->generate());
+
         return $pdf->download($filename);
     }
 
@@ -60,6 +61,7 @@ class ReportMaster
     public function print(): Response
     {
         $pdf = PDF::loadHTML($this->generate());
+
         return $pdf->stream();
     }
 

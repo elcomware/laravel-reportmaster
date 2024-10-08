@@ -18,7 +18,7 @@ class ReportController extends Controller implements ReportContract
         $data = [
             ['name' => 'John Doe', 'email' => 'john@example.com'],
             ['name' => 'Jane Doe', 'email' => 'jane@example.com'],
-        ];;//$request->input('data');
+        ]; //$request->input('data');
         $template = $request->input('template', config('reportmaster.templates.student.grade'));
 
         $report = ReportMaster::create($title)
@@ -29,15 +29,15 @@ class ReportController extends Controller implements ReportContract
         return response()->json(['report' => $report]);
     }
 
-    public function   download(Request $request, $format)
+    public function download(Request $request, $format)
     {
-       /* $title = $request->input('title');
-        $data = $request->input('data');*/
+        /* $title = $request->input('title');
+         $data = $request->input('data');*/
         $title = 'Report Title'; //$request->input('title');
         $data = [
             ['name' => 'John Doe', 'email' => 'john@example.com'],
             ['name' => 'Jane Doe', 'email' => 'jane@example.com'],
-        ];;//$request->input('data');
+        ]; //$request->input('data');
         $template = $request->input('template', config('reportmaster.defaults.template'));
 
         $report = ReportMaster::create($title)
@@ -59,19 +59,17 @@ class ReportController extends Controller implements ReportContract
         $data = [
             ['name' => 'John Doe', 'email' => 'john@example.com'],
             ['name' => 'Jane Doe', 'email' => 'jane@example.com'],
-        ];;//$request->input('data');
+        ]; //$request->input('data');
         $template = $request->input('template', config('reportmaster.templates.student-grade'));
-
 
         $report = ReportMaster::create($title)
             ->setData($data)
             ->setTemplate($template)
             ->print();
+
         return $report;
 
         //$pdf = PDF::loadHTML($report);
         //return $pdf->stream('report.pdf');
     }
-
-
 }

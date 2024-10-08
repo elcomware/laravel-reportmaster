@@ -13,8 +13,8 @@ it('renders the button component correctly', function () {
         ['Jane Doe', 'jane@example.com'],
     ];
 
-    $html =  Blade::renderComponent(
-        new Elcomware\ReportMaster\Components\Button()
+    $html = Blade::renderComponent(
+        new Elcomware\ReportMaster\Components\Button
     );
 
     expect($html)->toContain('<h1>User Report</h1>');
